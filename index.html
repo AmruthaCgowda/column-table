@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Column Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./index.js"></script>
+    <style>
+      .cell {
+        border: 1px solid #ccc;
+        height: 50px;
+        width: 50px;
+      }
+
+      /* Custom styles for input range */
+      input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 8px;
+        border-radius: 10px;
+        background: #e2e8f0; /* Light gray background */
+        outline: none;
+        transition: background 0.3s ease;
+      }
+
+      /* Focus style */
+      input[type="range"]:focus {
+        background: #63b3ed; /* Focused color */
+      }
+
+      /* Webkit thumb */
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #3182ce; /* Blue thumb */
+        cursor: pointer;
+        transition: background 0.3s ease;
+        margin-top: -2px; /* Align thumb correctly */
+      }
+
+      /* Focused thumb for webkit */
+      input[type="range"]:focus::-webkit-slider-thumb {
+        background: #2b6cb0; /* Darker blue on focus */
+      }
+
+      /* Mozilla thumb */
+      input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #3182ce; /* Blue thumb */
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      /* Focused thumb for Mozilla */
+      input[type="range"]:focus::-moz-range-thumb {
+        background: #2b6cb0; /* Darker blue on focus */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-8 font-sans">
+
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+      <div class="text-center">
+
+        <section class="mb-6 space-y-6 sm:space-y-0 sm:flex sm:justify-center sm:gap-8">
+          <div class="flex flex-col items-center space-y-2 w-full">
+            <label for="rows" class="text-xl font-medium text-gray-700">Rows</label>
+            <input type="range" name="rows" id="rows" min="2" max="8" value="2" list="markers" class="mt-2 w-full max-w-xs h-2 bg-blue-300 rounded-lg cursor-pointer" />
+            <span id="row-value" class="text-lg font-semibold text-gray-800">2</span>
+          </div>
+
+          <div class="flex flex-col items-center space-y-2 w-full">
+            <label for="columns" class="text-xl font-medium text-gray-700">Columns</label>
+            <input type="range" name="columns" id="columns" min="2" max="8" value="2" list="markers" class="mt-2 w-full max-w-xs h-2 bg-blue-300 rounded-lg cursor-pointer" />
+            <span id="column-value" class="text-lg font-semibold text-gray-800">2</span>
+          </div>
+        </section>
+
+        <datalist id="markers">
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+          <option value="8"></option>
+        </datalist>
+
+        <table class="mx-auto mt-6 border-collapse shadow-md rounded-lg overflow-hidden">
+          <tbody class="table-body"></tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
