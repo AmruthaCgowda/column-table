@@ -1,9 +1,9 @@
-# 📊 Dynamic Table
+# 📊 Column table
 
 A dynamic and interactive table where the number of rows and columns can be adjusted using range inputs. The table's cells are populated with numbers in a zigzag pattern.
 
 ## 🔗 Live Demo  
-<a href="https://amruthacgowda.github.io/column-table" target="_blank">Dynamic Table</a>
+<a href="https://amruthacgowda.github.io/column-table" target="_blank">Column table</a>
 
 ## 🛠️ Technologies Used
 
